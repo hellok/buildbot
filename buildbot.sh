@@ -10,6 +10,6 @@ easy_install sqlalchemy==0.7.10
 easy_install buildbot
 git clone https://github.com/ccadar/klee.git
 buildbot create-master master
-mv master/master.cfg.sample master/master.cfg
+cp master/master.cfg.sample master/master.cfg
 buildbot start master
 tail -f master/twistd.log
