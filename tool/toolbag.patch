@@ -1,0 +1,33 @@
+diff --git a/idapythonrc.py b/idapythonrc.py
+index f8767c6..b86c1f5 100644
+--- a/idapythonrc.py
++++ b/idapythonrc.py
+@@ -17,6 +17,7 @@ root = __root__.__file__[ : __root__.__file__.rfind(os.sep) ]
+ # XXX: we might be able to do this via the ihooka module
+ for h in ['base','app', 'user', r'toolbag', r'toolbag%sproviders' % os.sep, r'toolbag%sagent%sdbg' % (os.sep, os.sep), r'toolbag%sagent' % os.sep]:
+     sys.path.append('%s%c%s'% (root, os.sep, h))
++	print('CQ:append,%s%c%s'% (root, os.sep, h))
+ 
+ # import the default modules
+ import comment,database,segment,function
+diff --git a/toolbag/analysis.py b/toolbag/analysis.py
+index cf2efee..7b77949 100644
+--- a/toolbag/analysis.py
++++ b/toolbag/analysis.py
+@@ -62,10 +62,13 @@ class properties():
+ 			firstM = idc.GetFirstMember(sid)
+ 			lastM = idc.GetLastMember(sid)
+ 			arg_count = 0
+-
++			if lastM>4294967200:
++				return
++			if firstM>4294967200:
++				return
+ 			if lastM - firstM > 0x1000:
+ 				return
+-
++			print "[+] debug:",firstM,lastM
+ 			for i in xrange(firstM, lastM):
+ 				mName = idc.GetMemberName(sid, i)
+ 				mSize = idc.GetMemberSize(sid, i)
+
