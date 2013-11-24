@@ -9,8 +9,8 @@
 
 	ec_22-->failed with error no space	
 	ec_22->with new machine ->	
-	build with github kint.sh	
-	ec_42-->failed with	 
+	build with github kint.sh->failed with make install 	
+	ec_42-->failed with	 Variable not defined: 'CC1Option'
 	ec3-->start
 
 	3.0 on 64 failed
@@ -27,3 +27,9 @@
 	18-11-4.41 llvm3.2 build succeed on 13.04 ubuntu 
 	failed build kint 
 	
+	
+	ec_22 rebuild with git:
+	git clone http://llvm.org/git/llvm.git
+	
+	TIME:10-28
+	ec3 building 
