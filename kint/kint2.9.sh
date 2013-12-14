@@ -1,7 +1,7 @@
 #!/bin/sh
 #author : hellok
 #for build of kint with llvm3.1sudo apt-get update
-tmux
+sudo apt-get install -y autoconf automake libtool
 sudo apt-get install -y gcc
 sudo apt-get install -y subversion
 sudo apt-get install -y aptitude
